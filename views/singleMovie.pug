@@ -1,0 +1,35 @@
+extends base.pug
+
+block content
+  div(class ="container")
+    h4
+      Badge(variant="secondary") #{name}
+    div(class="card card-body mb-3")
+      div(class="row") 
+        p(class="col ")
+        p(class="col text-center") #{title} (#{release_year} )
+        p(class="col ")
+      div(class="row") 
+        p(class="col bg-warning") 
+        p(class="col text-center") MOVIE INFO
+        p(class="col bg-warning")
+      div(class="row pb-3")
+        div(class="col align-content-center") #{description} 
+      div
+        div Rating: #{rating}%
+        div Genre: 
+        div Directed By:  
+        div In Theaters: 
+          
+
+    div Cast
+      ul(class="list-inline")
+        each val in list
+          li(class="list-inline-item")
+            div 
+              div 
+                img(src= "/images/people/"+val.image alt="Smiley face" height="100" width="100" )
+              div(class= "text-wrap") #{val.name}
+                
+
+  

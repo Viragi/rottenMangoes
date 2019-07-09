@@ -1,0 +1,21 @@
+extends base.pug
+
+
+block content
+  div(class ="container")
+    div(class="row")
+      div(class="col")
+        h4
+          Badge(variant="secondary") #{name}
+        ul(class="list-group")
+          each val in list
+            li(class="list-group-item")
+              div( id=val.id)
+                a(href="/movies/"+val.id class="text-dark")  
+                  span #{val.title}
+                  span (#{val.release_year}) : #{val.rating}% 
+                  img(src="/images/mango.svg" class="logo")
+      div(class="col")
+        include generMovies.pug 
+      div(class="col")
+        include yearBaseMovie.pug

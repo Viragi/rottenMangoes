@@ -1,0 +1,9 @@
+nav(class="navbar navbar-expand-sm navbar-dark bg-danger mb-3 py-0")
+  div(class="container")
+    a(class="navbar-brand" href="/movies") #{brandname}
+    div
+      form(class="form-inline my-2 my-lg-0" id="searchForm" action="/movies")
+        input(type="hidden"  name="type" value="search")
+        input(class="form-control mr-sm-2" placeholder="Search" name="term" required)
+        button(class="btn btn-link my-2 my-sm-0" type="submit" id="searchButton") Search
+    

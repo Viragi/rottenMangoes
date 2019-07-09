@@ -1,0 +1,13 @@
+extends base.pug
+
+block content
+  div(class ="container")
+    h4
+      Badge(variant="secondary") Searched Term: #{name}
+    ul(class="list-group")
+      each val in list
+        li(class="list-group-item")
+          div(class="card card-body mb-3" id=val.id)
+            a(href="/movies/"+val.id)
+              div #{val.title}
+            div RATING: #{val.rating} RELEASE YEAR:  #{val.release_year}

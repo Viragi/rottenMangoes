@@ -1,0 +1,9 @@
+h4
+  Badge(variant="secondary") #{nameYear}
+ul(class="list-group") 
+  each val in yearList
+    li(class="list-group-item")
+      div(id= listYear[val].id)
+        a(href="/movies/"+listYear[val].id class="text-dark")  
+          span #{listYear[val].release_year} : 
+          span #{listYear[val].title}

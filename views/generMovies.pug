@@ -1,0 +1,8 @@
+h4
+  div(class="text-wrap") #{nameGener}
+ul(class="list-group")
+  each val in listGener
+    li(class="list-group-item")
+      div
+        a(href="/movies/genre/"+val.id class="text-dark")  
+          span Top 100 #{val.type} Movies

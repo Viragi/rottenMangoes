@@ -1,0 +1,13 @@
+body {
+  padding: 40px 10px;
+  background-color: whitesmoke;
+}
+
+a :hover {
+  color: lightskyblue;
+}
+
+.logo {
+  width: 20px;
+  height: 20px;
+}

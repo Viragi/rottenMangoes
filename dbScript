@@ -1,0 +1,27 @@
+create table IF NOT EXISTS movies (id serial primary key,
+                      title varchar,
+                      release_year integer,
+                      description varchar,
+                      rating integer  
+                    );
+
+create table IF NOT EXISTS person (id serial primary key,
+                        name text,
+                        image text
+                    );
+        
+create table IF NOT EXISTS movie_person (id serial primary key,
+                            person_id integer references person(id),
+                            movie_id integer references movies(id) 
+                          );
+
+create table IF NOT EXISTS gener (id serial primary key,
+                    type text
+                    );
+
+create table IF NOT EXISTS movie_gener (id serial primary key,
+                            gener_id integer references gener(id),
+                            movie_id integer references movies(id)
+                         );
+
+

@@ -9,7 +9,7 @@ router.get('/', async (req, res, next) => {
     if (queryVal == 'search') {
       const searchTerm = req.query.term;
       const result = await db.query(
-        'select id, title,rating, release_year, description from movies where title like $1',
+        'select id, title,rating, release_year, description from movies where title ilike $1',
         [`%${searchTerm}%`]
       );
         if(req.accepts('text/html')){
@@ -80,7 +80,7 @@ router.get('/:id', async (req, res, next) => {
     );
 
     const personDetails = await db.query(
-      `select p.name, p.image  from movie_person mp left join person p on p.id = mp.person_id where mp.movie_id=${
+      `select p.name, p.image  from  person p left join  movie_person mp on p.id = mp.person_id where mp.movie_id=${
         req.params.id
       }`
     );

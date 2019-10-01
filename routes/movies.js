@@ -43,7 +43,6 @@ router.get('/', async (req, res, next) => {
         return arr;
       }, []);
 
-      //console.log(movieYear.rows, 'MOVIEYEARRR', yearList);
       if(req.accepts('text/html')){
           res.render('popularMovies', {
           brandname: 'Rotten Mangoes',
@@ -73,6 +72,7 @@ router.get('/', async (req, res, next) => {
 //get details of the selected movie
 router.get('/:id', async (req, res, next) => {
   try {
+    console.log("I am here");
     const moviedetails = await db.query(
       `select id, title, rating,release_year, description from movies where id= ${
         req.params.id
@@ -80,7 +80,7 @@ router.get('/:id', async (req, res, next) => {
     );
 
     const personDetails = await db.query(
-      `select p.name, mp.role, p.image  from movie_person mp left join person p on p.person_id = mp.person_id where mp.movie_ID=${
+      `select p.name, mp.role, p.image  from movie_person mp left join person p on p.id = mp.person_id where mp.movie_id=${
         req.params.id
       }`
     );

@@ -24,4 +24,5 @@ create table IF NOT EXISTS movie_gener (id serial primary key,
                             movie_id integer references movies(id)
                          );
 
-
+insert into movies (title,release_year,description,rating) values('STDY2',2019,'A college student faces down school bullies while competing in track and field.',7);
+insert into person (name,image) values('Varun Dhawan','varunDhawan');

@@ -80,7 +80,7 @@ router.get('/:id', async (req, res, next) => {
     );
 
     const personDetails = await db.query(
-      `select p.name, mp.role, p.image  from movie_person mp left join person p on p.id = mp.person_id where mp.movie_id=${
+      `select p.name, p.image  from movie_person mp left join person p on p.id = mp.person_id where mp.movie_id=${
         req.params.id
       }`
     );
